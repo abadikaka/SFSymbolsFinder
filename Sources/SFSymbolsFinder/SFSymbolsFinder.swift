@@ -12,17 +12,74 @@ import SwiftUI
 /// SFFinderConvertable: describe the theme provider capabilities
 /// - image: return a SwiftUI Image
 /// - systemName: return a system name of sf symbols as a String
-private protocol SFFinderConvertable {
+public protocol SFFinderConvertable {
     var image: Image { get }
     var systemName: String { get }
 }
 
-private extension SFFinderConvertable {
+public extension SFFinderConvertable {
     var image: Image {
         return Image(systemName: systemName)
     }
 }
 
+// MARK: - General
+
+/// General category for sf symbols, not included in any category
+public enum General: String, SFFinderConvertable {
+    case lineHorizontal3
+    case lineHorizontal3Decrease
+    case lineHorizontal3DecreaseCircle
+    case lineHorizontal3DecreaseCircleFill
+    case squareGrid3x2
+    case squareGrid3x2Fill
+    case squareGrid2x2
+    case squareGrid2x2Fill
+    case squareGrid4x3Fill
+    case squareLefthalfFill
+    case squareRighthalfFill
+    case dotSquare
+    case dotSquareFill
+    case squareSplit2x1
+    case squareSplit2x1Fill
+    case squareSplit1x2
+    case squareSplit1x2Fill
+    case squareSplit2x2
+    case squareSplit2x2Fill
+    case squaresBelowRectangle
+    case squareOnSquare
+    case squareFillOnSquareFill
+    case plusSquareOnSquare
+    case plusSquareFillOnSquareFill
+    case squareOnCircle
+    case squareFillOnCircleFill
+    case squareStack
+    case squareStackFill
+    case squareAndLineVerticalAndSquare
+    case squareFillAndLineVerticalSquareFill
+    case squareFillAndLineVerticalAndSquare
+    case squareAndLineVerticalAndSquareFill
+    case squareStack3dDownRight
+    case squareStack3dDownRightFill
+    case squareStack3dUp
+    case squareStack3dUpFill
+    case squareStack3dUpSlash
+    case squareStack3dUpSlashFill
+
+    public var systemName: String {
+        var finalName = ""
+        rawValue.forEach { char in
+            if char.isUppercase {
+                finalName += ".\(char.lowercased())"
+            } else if char.isNumber {
+                finalName += ".\(char)"
+            } else {
+                finalName += char.description
+            }
+        }
+        return finalName
+    }
+}
 
 // MARK: - Communication
 
