@@ -15,8 +15,9 @@ SFSymbolsFinder is a convenient library to get whole list of available latest SF
 
 ## Introduction
  
- SFSymbolsFinder introduces 19 SF Symbols categories, each category represented by an `enum`: 
+ SFSymbolsFinder introduces 20 SF Symbols categories, each category represented by an `enum`: 
 
+- `General`
 - `Communication`
 - `Weather`
 - `ObjectsAndTools`
@@ -38,6 +39,8 @@ SFSymbolsFinder is a convenient library to get whole list of available latest SF
 - `Math`
 
 All categories is based on official Apple SF Symbols application [sfsymbols](https://developer.apple.com/sf-symbols/)
+
+***FYI: Most of the symbols is coming from SF Symbols v 1.1 for now. Soon will adding more to support v 2.1. Contribution welcome !***
 
 ## Usage
 
