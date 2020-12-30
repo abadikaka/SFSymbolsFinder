@@ -27,6 +27,8 @@ public extension SFFinderConvertable {
 
 /// General category for sf symbols, not included in any category
 public enum General: String, SFFinderConvertable {
+    // iOS 13+
+
     case lineHorizontal3
     case lineHorizontal3Decrease
     case lineHorizontal3DecreaseCircle
@@ -85,6 +87,8 @@ public enum General: String, SFFinderConvertable {
 
 /// Communication category for sf symbols
 public enum Communication: String, SFFinderConvertable {
+    // iOS 13+
+
     case mic
     case micFill
     case micCircle
@@ -189,6 +193,8 @@ public enum Communication: String, SFFinderConvertable {
 
 /// Weather category for sf symbols
 public enum Weather: String, SFFinderConvertable {
+    // iOS 13+
+
     case sunMin
     case sunMinFill
     case sunMax
@@ -275,6 +281,8 @@ public enum Weather: String, SFFinderConvertable {
 
 /// Object and tools category sf symbols
 public enum ObjectAndTools: String, SFFinderConvertable {
+    // iOS 13+
+
     case pencil
     case pencilCircle
     case pencilCircleFill
@@ -534,6 +542,8 @@ public enum ObjectAndTools: String, SFFinderConvertable {
 
 /// Devices category for sf symbols
 public enum Devices: String, SFFinderConvertable {
+    // iOS 13+
+
     case keyboard
     case keyboardChevronCompactDown
     case hifispeaker
@@ -570,6 +580,8 @@ public enum Devices: String, SFFinderConvertable {
 
 /// Connectivity category for sf symbols
 public enum Connectivity: String, SFFinderConvertable {
+    // iOS 13+
+
     case wifi
     case wifiSlash
     case wifiExclamationmark
@@ -598,6 +610,8 @@ public enum Connectivity: String, SFFinderConvertable {
 
 /// Transportation category for sf symbols
 public enum Transportation: String, SFFinderConvertable {
+    // iOS 13+
+
     case car
     case carFill
     case tramFill
@@ -622,6 +636,8 @@ public enum Transportation: String, SFFinderConvertable {
 
 /// Human category for sf symbol
 public enum Human: String, SFFinderConvertable {
+    // iOS 13+
+
     case person
     case personFill
     case personCircle
@@ -691,6 +707,8 @@ public enum Human: String, SFFinderConvertable {
 
 /// Nature category for sf symbols
 public enum Nature: String, SFFinderConvertable {
+    // iOS 13+
+
     case flame
     case flameFill
     case bolt
@@ -728,6 +746,8 @@ public enum Nature: String, SFFinderConvertable {
 
 /// Editing category for editing sf symbols
 public enum Editing: String, SFFinderConvertable {
+    // iOS 13+
+
     case pencil
     case pencilCircle
     case pencilCircleFill
@@ -795,6 +815,8 @@ public enum Editing: String, SFFinderConvertable {
 
 /// Text formatting category for sf symbols
 public enum TextFormatting: String, SFFinderConvertable {
+    // iOS 13+
+
     case paragraph
     case listDash
     case listBullet
@@ -847,6 +869,8 @@ public enum TextFormatting: String, SFFinderConvertable {
 
 /// Media category for sf symbols
 public enum Media: String, SFFinderConvertable {
+    // iOS 13+
+
     case play
     case playFill
     case playCircle
@@ -946,6 +970,8 @@ public enum Media: String, SFFinderConvertable {
 
 /// Keyboard category for sf symbols
 public enum Keyboard: String, SFFinderConvertable {
+    // iOS 13+
+
     case command
     case option
     case alt
@@ -994,6 +1020,8 @@ public enum Keyboard: String, SFFinderConvertable {
 
 /// Commerce category for sf symbols
 public enum Commerce: String, SFFinderConvertable {
+    // iOS 13+
+
     case signature
     case bag
     case bagFill
@@ -1029,6 +1057,8 @@ public enum Commerce: String, SFFinderConvertable {
 
 /// Time category for finding sf symbols
 public enum Time: String, SFFinderConvertable {
+    // iOS 13+
+
     case clock
     case clockFill
     case alarm
@@ -1056,6 +1086,8 @@ public enum Time: String, SFFinderConvertable {
 
 /// Health category representation
 public enum Health: String, SFFinderConvertable {
+    // iOS 13+
+
     case heart
     case heartFill
     case heartCircle
@@ -1087,6 +1119,8 @@ public enum Health: String, SFFinderConvertable {
 
 /// Shape category representation
 public enum Shapes: String, SFFinderConvertable {
+    // iOS 13+
+
     case rectangle
     case rectangleFill
     case shield
@@ -1123,6 +1157,8 @@ public enum Shapes: String, SFFinderConvertable {
 
 /// SF Symbols for arrow representation
 public enum Arrows: String, SFFinderConvertable {
+    // iOS 13+
+
     case arrowshapeTurnUpLeft
     case arrowshapeTurnUpLeftFill
     case arrowshapeTurnUpLeftCircle
@@ -1331,6 +1367,8 @@ public enum Arrows: String, SFFinderConvertable {
 
 /// SFSymbols for indices category symbols
 public enum Indices: String, SFFinderConvertable {
+    // iOS 13+
+
     case questionmarkCircle
     case questionmarkCircleFill
     case questionmarkSquare
@@ -1408,6 +1446,8 @@ public enum Indices: String, SFFinderConvertable {
 
     /// SFSymbols for retrieving currency symbols
     public enum Currency: SFFinderConvertable {
+        // iOS 13+
+
         case circle(currency: AvailableCurrency)
         case circleFill(currency: AvailableCurrency)
         case square(currency: AvailableCurrency)
@@ -1432,6 +1472,8 @@ public enum Indices: String, SFFinderConvertable {
     /// SFSymbols for retrieving the number symbols
     /// Using Generic type in case want to put 01 or 02 as a String instead Int
     public enum Number<Type>: SFFinderConvertable {
+        // iOS 13+
+
         case circle(number: Type)
         case circleFill(number: Type)
         case altCircle(number: Type)
@@ -1467,6 +1509,8 @@ public enum Indices: String, SFFinderConvertable {
 
     /// SFSymbols for getting the alphabet symbols
     public enum Alphabet: SFFinderConvertable {
+        // iOS 13+
+
         case circle(character: Character)
         case circleFill(character: Character)
         case square(character: Character)
@@ -1507,6 +1551,8 @@ public enum Indices: String, SFFinderConvertable {
 
 /// SFSymbol for mathematics operation
 public enum Math: String, SFFinderConvertable {
+    // iOS 13+
+
     case sum
     case percent
     case function
