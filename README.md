@@ -1,3 +1,14 @@
+<p align="center">
+    <img src="https://img.shields.io/badge/swift-5.2-orange.svg" />
+    <a href="https://swift.org/package-manager">
+        <img src="https://img.shields.io/badge/swiftpm-compatible-brightgreen.svg?style=flat" alt="Swift Package Manager" />
+    </a>
+     <img src="https://img.shields.io/badge/platforms-macOS+iOS+iPadOS+tvOS+watchOS-brightgreen.svg?style=flat" alt="MacOS + iOS + iPadOS + tvOS + watchOS" />
+    <a href="https://twitter.com/michaelabadiii">
+        <img src="https://img.shields.io/badge/twitter-@michaelabadiii-blue.svg?style=flat" alt="Twitter: @michaelabadiii" />
+    </a>
+</p>
+
 # SFSymbolsFinder
 
 SFSymbolsFinder is a convenient library to get whole list of available latest SF Symbols image
