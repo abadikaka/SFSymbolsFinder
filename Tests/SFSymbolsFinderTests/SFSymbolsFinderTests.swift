@@ -8,7 +8,6 @@
 import XCTest
 @testable import SFSymbolsFinder
 
-@available(iOS 13.0, *)
 final class SFSymbolsFinderTests: XCTestCase {
 
     func testSystemNameConversion() {
@@ -50,11 +49,17 @@ final class SFSymbolsFinderTests: XCTestCase {
         XCTAssertEqual(Arrows.return.systemName, "return")
     }
 
+    func testGamingConversion() {
+        XCTAssertEqual(Gaming.l2RectangleRoundedtopFill.systemName, "l.2.rectangle.roundedtop.fill")
+    }
+
     static var allTests = [
         ("testSystemNameConversion", testSystemNameConversion),
         ("testSystemNameNumberConversion", testSystemNameNumberConversion),
         ("testSystemNameIndicesCurrencyConversion", testSystemNameIndicesCurrencyConversion),
         ("testSystemNameIndicesAlphabetConversion", testSystemNameIndicesAlphabetConversion),
-        ("testSystemNameIndicesNumberConversion", testSystemNameIndicesNumberConversion)
+        ("testSystemNameIndicesNumberConversion", testSystemNameIndicesNumberConversion),
+        ("testGamingConversion", testGamingConversion),
+        ("testSystemNameArrowConversion",testSystemNameArrowConversion)
     ]
 }

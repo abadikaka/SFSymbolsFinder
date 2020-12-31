@@ -1617,3 +1617,93 @@ public enum Math: String, SFFinderConvertable {
         return finalName
     }
 }
+
+// MARK: - Gaming
+
+/// SFSymbol for gaming icon
+public enum Gaming: String, SFFinderConvertable {
+    // iOS 14+
+
+    case circleGridCross
+    case circleGridCrossFill
+    case circleGridCrossLeftFill
+    case circleGridCrossUpFill
+    case circleGridCrossRightFill
+    case circleGridCrossDownFill
+    case circleSquare
+    case circleFillSquareFill
+    case house
+    case houseFill
+    case houseCircle
+    case houseCircleFill
+    case rectangleOnRectangle
+    case rectangleFillOnRectangleFill
+    case rectangleFillOnRectangleFillCircle
+    case rectangleFillOnRectangleFillCircleFill
+    case gamecontroller
+    case gamecontrollerFill
+    case lJoystick
+    case lJoystickFill
+    case rJoystick
+    case rJoystickFill
+    case lJoystickDown
+    case lJoystickDownFill
+    case rJoystickDown
+    case rJoystickDownFill
+    case dpad
+    case dpadFill
+    case dpadLeftFill
+    case dpadUpFill
+    case dpadRightFill
+    case dpadDownFill
+    case circleCircle
+    case circleCircleFill
+    case squareCircle
+    case squareCircleFill
+    case triangleCircle
+    case triangleCircleFill
+    case rectangleRoundedtop
+    case rectangleRoundedtopFill
+    case rectangleRoundedbottom
+    case rectangleRoundedbottomFill
+    case lRectangleRoundedbottom
+    case lRectangleRoundedbottomFill
+    case l1RectangleRoundedbottom
+    case l1RectangleRoundedbottomFill
+    case l2RectangleRoundedtop
+    case l2RectangleRoundedtopFill
+    case rRectangleRoundedbottom
+    case rRectangleRoundedbottomFill
+    case r1RectangleRoundedbottom
+    case r1RectangleRoundedbottomFill
+    case r2RectangleRoundedtop
+    case r2RectangleRoundedtopFill
+    case lbRectangleRoundedbottom
+    case lbRectangleRoundedbottomFill
+    case rbRectangleRoundedbottom
+    case rbRectangleRoundedbottomFill
+    case ltRectangleRoundedtop
+    case ltRectangleRoundedtopFill
+    case rtRectangleRoundedtop
+    case rtRectangleRoundedtopFill
+    case zlRectangleRoundedtop
+    case zlRectangleRoundedtopFill
+    case zrRectangleRoundedtop
+    case zrRectangleRoundedtopFill
+    case lineHorizontal3Circle
+    case lineHorizontal3CircleFill
+
+    public var systemName: String {
+        var finalName = ""
+        rawValue.forEach { char in
+            if char.isUppercase {
+                finalName += ".\(char.lowercased())"
+            } else if char.isNumber {
+                finalName += ".\(char)"
+            } else {
+                finalName += char.description
+            }
+        }
+        return finalName
+    }
+}

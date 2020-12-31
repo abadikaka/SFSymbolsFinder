@@ -15,7 +15,7 @@ SFSymbolsFinder is a convenient library to get whole list of available latest SF
 
 ## Introduction
  
- SFSymbolsFinder introduces 20 SF Symbols categories, each category represented by an `enum`: 
+ SFSymbolsFinder introduces 21 SF Symbols categories, each category represented by an `enum`: 
 
 - `General`
 - `Communication`
@@ -37,6 +37,7 @@ SFSymbolsFinder is a convenient library to get whole list of available latest SF
 - `Arrows`
 - `Indices`
 - `Math`
+- `Gaming`
 
 All categories is based on official Apple SF Symbols application [sfsymbols](https://developer.apple.com/sf-symbols/)
 
@@ -81,17 +82,26 @@ For one of the icon which is `oneMagnifyingglass` is used for getting `1.magnify
 For indices there are special ways to get 3 special symbols which is for retrieving `Currency`, `Alphabet`, and `Number`.
 
 - For number, it supports generic type
+
 ```swift
 // With Int
 Indices.Number.circle(number: 1).systemName
 // With String
-Indices.Number.circle(number: 01).systemName
+Indices.Number.circle(number: "01").systemName
 ```
-Please beware not every number or string is supported, in case we put 999 or "-123" it won't return anything.
+> Please beware not every number or string is supported, in case we put 999 or "-123" it won't return anything.
 
 - For `Alphabet`, it supports by passing `Character` enum. It supports `a` to `z`.
 
+```swift
+Indices.Alphabet.circle(character: .a).systemName // return a.circle
+```
+
 - For `Currency`, it supports by passing `AvailableCurrency` enum.
+
+```swift
+Indices.Currency.circle(currency: .dollar).systemName // return dollarsign.circle
+```
 
 ## Installation
 
@@ -111,6 +121,8 @@ If you'd like to open an issue, please submit new issue.
 
 ## Todo
 
-- [] Add generic validation for system name
+- [ ] Add generic validation for system name
+- [ ] Add more iOS 14 symbols
+- [ ] Add more iOS 13 symbols that not included in any Categories
 
 Thank you and please enjoy using **SFSymbolsFinder**!
