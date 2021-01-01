@@ -21,13 +21,35 @@ public extension SFFinderConvertable {
     var image: Image {
         return Image(systemName: systemName)
     }
+
+    var systemName: String {
+        if let sfValidator = self as? SFSymbolsHasValidator {
+            return sfValidator.validator.validateSystemName(for: self)
+        } else {
+            return ""
+        }
+    }
+}
+
+protocol SFSymbolsEnum: SFSymbolsHasValidator {
+    var enumRawValue: String { get }
+}
+
+protocol SFSymbolsHasValidator {
+    var validator: SFSymbolsValidation { get }
+}
+
+extension SFSymbolsHasValidator {
+    var validator: SFSymbolsValidation {
+        return SFSymbolsValidator()
+    }
 }
 
 // MARK: - General
 
 /// General category for sf symbols, not included in any category
-public enum General: String, SFFinderConvertable {
-    // iOS 13+
+public enum General: String, SFFinderConvertable, SFSymbolsEnum {
+    // MARK: iOS 13+
 
     case lineHorizontal3
     case lineHorizontal3Decrease
@@ -68,26 +90,17 @@ public enum General: String, SFFinderConvertable {
     case squareStack3dUpSlash
     case squareStack3dUpSlashFill
 
-    public var systemName: String {
-        var finalName = ""
-        rawValue.forEach { char in
-            if char.isUppercase {
-                finalName += ".\(char.lowercased())"
-            } else if char.isNumber {
-                finalName += ".\(char)"
-            } else {
-                finalName += char.description
-            }
-        }
-        return finalName
+    var enumRawValue: String {
+        return rawValue
     }
+
 }
 
 // MARK: - Communication
 
 /// Communication category for sf symbols
-public enum Communication: String, SFFinderConvertable {
-    // iOS 13+
+public enum Communication: String, SFFinderConvertable, SFSymbolsEnum {
+    // MARK: iOS 13+
 
     case mic
     case micFill
@@ -176,24 +189,17 @@ public enum Communication: String, SFFinderConvertable {
     case envelopeBadge
     case envelopeBadegFill
 
-    public var systemName: String {
-        var finalName = ""
-        rawValue.forEach { char in
-            if char.isUppercase {
-                finalName += ".\(char.lowercased())"
-            } else {
-                finalName += char.description
-            }
-        }
-        return finalName
+    var enumRawValue: String {
+        return rawValue
     }
+
 }
 
 // MARK: - Weather
 
 /// Weather category for sf symbols
-public enum Weather: String, SFFinderConvertable {
-    // iOS 13+
+public enum Weather: String, SFFinderConvertable, SFSymbolsEnum {
+    // MARK: iOS 13+
 
     case sunMin
     case sunMinFill
@@ -264,24 +270,17 @@ public enum Weather: String, SFFinderConvertable {
     case thermometerSnowflake
     case thermometer
 
-    public var systemName: String {
-        var finalName = ""
-        rawValue.forEach { char in
-            if char.isUppercase {
-                finalName += ".\(char.lowercased())"
-            } else {
-                finalName += char.description
-            }
-        }
-        return finalName
+    var enumRawValue: String {
+        return rawValue
     }
+
 }
 
 // MARK: - ObjectAndTools
 
 /// Object and tools category sf symbols
-public enum ObjectAndTools: String, SFFinderConvertable {
-    // iOS 13+
+public enum ObjectAndTools: String, SFFinderConvertable, SFSymbolsEnum {
+    // MARK: iOS 13+
 
     case pencil
     case pencilCircle
@@ -519,30 +518,17 @@ public enum ObjectAndTools: String, SFFinderConvertable {
     case lightbulbSlash
     case lightbulbSlashFill
 
-    public var systemName: String {
-        var finalName = ""
-        if self == .oneMagnifyingglass {
-            finalName = "1.magnifyingglass"
-        } else {
-            rawValue.forEach { char in
-                if char.isUppercase {
-                    finalName += ".\(char.lowercased())"
-                } else if char.isNumber {
-                    finalName += ".\(char)"
-                } else {
-                    finalName += char.description
-                }
-            }
-        }
-        return finalName
+    var enumRawValue: String {
+        return rawValue
     }
+
 }
 
 // MARK: - Devices
 
 /// Devices category for sf symbols
-public enum Devices: String, SFFinderConvertable {
-    // iOS 13+
+public enum Devices: String, SFFinderConvertable, SFSymbolsEnum {
+    // MARK: iOS 13+
 
     case keyboard
     case keyboardChevronCompactDown
@@ -561,26 +547,17 @@ public enum Devices: String, SFFinderConvertable {
     case gameControllerFill
     case headphones
 
-    public var systemName: String {
-        var finalName = ""
-        rawValue.forEach { char in
-            if char.isUppercase {
-                finalName += ".\(char.lowercased())"
-            } else if char.isNumber {
-                finalName += ".\(char)"
-            } else {
-                finalName += char.description
-            }
-        }
-        return finalName
+    var enumRawValue: String {
+        return rawValue
     }
+
 }
 
 // MARK: - Connectivity
 
 /// Connectivity category for sf symbols
-public enum Connectivity: String, SFFinderConvertable {
-    // iOS 13+
+public enum Connectivity: String, SFFinderConvertable, SFSymbolsEnum {
+    // MARK: iOS 13+
 
     case wifi
     case wifiSlash
@@ -591,52 +568,34 @@ public enum Connectivity: String, SFFinderConvertable {
     case radiowavesRight
     case antennaRadiowavesLeftAndRight
 
-    public var systemName: String {
-        var finalName = ""
-        rawValue.forEach { char in
-            if char.isUppercase {
-                finalName += ".\(char.lowercased())"
-            } else if char.isNumber {
-                finalName += ".\(char)"
-            } else {
-                finalName += char.description
-            }
-        }
-        return finalName
+    var enumRawValue: String {
+        return rawValue
     }
+
 }
 
 // MARK: - Transportation
 
 /// Transportation category for sf symbols
-public enum Transportation: String, SFFinderConvertable {
-    // iOS 13+
+public enum Transportation: String, SFFinderConvertable, SFSymbolsEnum {
+    // MARK: iOS 13+
 
     case car
     case carFill
     case tramFill
     case airplane
 
-    public var systemName: String {
-        var finalName = ""
-        rawValue.forEach { char in
-            if char.isUppercase {
-                finalName += ".\(char.lowercased())"
-            } else if char.isNumber {
-                finalName += ".\(char)"
-            } else {
-                finalName += char.description
-            }
-        }
-        return finalName
+    var enumRawValue: String {
+        return rawValue
     }
+
 }
 
 // MARK: - Human
 
 /// Human category for sf symbol
-public enum Human: String, SFFinderConvertable {
-    // iOS 13+
+public enum Human: String, SFFinderConvertable, SFSymbolsEnum {
+    // MARK: iOS 13+
 
     case person
     case personFill
@@ -688,26 +647,17 @@ public enum Human: String, SFFinderConvertable {
     case handPointRight
     case handPointRightFill
 
-    public var systemName: String {
-        var finalName = ""
-        rawValue.forEach { char in
-            if char.isUppercase {
-                finalName += ".\(char.lowercased())"
-            } else if char.isNumber {
-                finalName += ".\(char)"
-            } else {
-                finalName += char.description
-            }
-        }
-        return finalName
+    var enumRawValue: String {
+        return rawValue
     }
+
 }
 
 // MARK: - Nature
 
 /// Nature category for sf symbols
-public enum Nature: String, SFFinderConvertable {
-    // iOS 13+
+public enum Nature: String, SFFinderConvertable, SFSymbolsEnum {
+    // MARK: iOS 13+
 
     case flame
     case flameFill
@@ -727,26 +677,17 @@ public enum Nature: String, SFFinderConvertable {
     case tortoiseFill
     case leafArrowCirclepath
 
-    public var systemName: String {
-        var finalName = ""
-        rawValue.forEach { char in
-            if char.isUppercase {
-                finalName += ".\(char.lowercased())"
-            } else if char.isNumber {
-                finalName += ".\(char)"
-            } else {
-                finalName += char.description
-            }
-        }
-        return finalName
+    var enumRawValue: String {
+        return rawValue
     }
+
 }
 
 // MARK: - Editing
 
 /// Editing category for editing sf symbols
-public enum Editing: String, SFFinderConvertable {
-    // iOS 13+
+public enum Editing: String, SFFinderConvertable, SFSymbolsEnum {
+    // MARK: iOS 13+
 
     case pencil
     case pencilCircle
@@ -796,26 +737,17 @@ public enum Editing: String, SFFinderConvertable {
     case circleLefthalfFill
     case circleRighthalfFill
 
-    public var systemName: String {
-        var finalName = ""
-        rawValue.forEach { char in
-            if char.isUppercase {
-                finalName += ".\(char.lowercased())"
-            } else if char.isNumber {
-                finalName += ".\(char)"
-            } else {
-                finalName += char.description
-            }
-        }
-        return finalName
+    var enumRawValue: String {
+        return rawValue
     }
+
 }
 
 // MARK: - TextFormatting
 
 /// Text formatting category for sf symbols
-public enum TextFormatting: String, SFFinderConvertable {
-    // iOS 13+
+public enum TextFormatting: String, SFFinderConvertable, SFSymbolsEnum {
+    // MARK: iOS 13+
 
     case paragraph
     case listDash
@@ -850,26 +782,17 @@ public enum TextFormatting: String, SFFinderConvertable {
     case textformat123
     case textbox
 
-    public var systemName: String {
-        var finalName = ""
-        rawValue.forEach { char in
-            if char.isUppercase {
-                finalName += ".\(char.lowercased())"
-            } else if char.isNumber {
-                finalName += ".\(char)"
-            } else {
-                finalName += char.description
-            }
-        }
-        return finalName
+    var enumRawValue: String {
+        return rawValue
     }
+
 }
 
 // MARK: - Media
 
 /// Media category for sf symbols
-public enum Media: String, SFFinderConvertable {
-    // iOS 13+
+public enum Media: String, SFFinderConvertable, SFSymbolsEnum {
+    // MARK: iOS 13+
 
     case play
     case playFill
@@ -951,26 +874,17 @@ public enum Media: String, SFFinderConvertable {
     case goforwardPlus
     case gobackwardMinus
 
-    public var systemName: String {
-        var finalName = ""
-        rawValue.forEach { char in
-            if char.isUppercase {
-                finalName += ".\(char.lowercased())"
-            } else if char.isNumber {
-                finalName += ".\(char)"
-            } else {
-                finalName += char.description
-            }
-        }
-        return finalName
+    var enumRawValue: String {
+        return rawValue
     }
+
 }
 
 // MARK: - Keyboard
 
 /// Keyboard category for sf symbols
-public enum Keyboard: String, SFFinderConvertable {
-    // iOS 13+
+public enum Keyboard: String, SFFinderConvertable, SFSymbolsEnum {
+    // MARK: iOS 13+
 
     case command
     case option
@@ -1001,26 +915,17 @@ public enum Keyboard: String, SFFinderConvertable {
     case control
     case projective
 
-    public var systemName: String {
-        var finalName = ""
-        rawValue.forEach { char in
-            if char.isUppercase {
-                finalName += ".\(char.lowercased())"
-            } else if char.isNumber {
-                finalName += ".\(char)"
-            } else {
-                finalName += char.description
-            }
-        }
-        return finalName
+    var enumRawValue: String {
+        return rawValue
     }
+
 }
 
 // MARK: - Commerce
 
 /// Commerce category for sf symbols
-public enum Commerce: String, SFFinderConvertable {
-    // iOS 13+
+public enum Commerce: String, SFFinderConvertable, SFSymbolsEnum {
+    // MARK: iOS 13+
 
     case signature
     case bag
@@ -1038,26 +943,17 @@ public enum Commerce: String, SFFinderConvertable {
     case creditcard
     case creditcardFill
 
-    public var systemName: String {
-        var finalName = ""
-        rawValue.forEach { char in
-            if char.isUppercase {
-                finalName += ".\(char.lowercased())"
-            } else if char.isNumber {
-                finalName += ".\(char)"
-            } else {
-                finalName += char.description
-            }
-        }
-        return finalName
+    var enumRawValue: String {
+        return rawValue
     }
+
 }
 
 // MARK: - Time
 
 /// Time category for finding sf symbols
 public enum Time: String, SFFinderConvertable {
-    // iOS 13+
+    // MARK: iOS 13+
 
     case clock
     case clockFill
@@ -1067,26 +963,17 @@ public enum Time: String, SFFinderConvertable {
     case stopwatchFill
     case timer
 
-    public var systemName: String {
-        var finalName = ""
-        rawValue.forEach { char in
-            if char.isUppercase {
-                finalName += ".\(char.lowercased())"
-            } else if char.isNumber {
-                finalName += ".\(char)"
-            } else {
-                finalName += char.description
-            }
-        }
-        return finalName
+    var enumRawValue: String {
+        return rawValue
     }
+
 }
 
 // MARK: - Health
 
 /// Health category representation
 public enum Health: String, SFFinderConvertable {
-    // iOS 13+
+    // MARK: iOS 13+
 
     case heart
     case heartFill
@@ -1100,26 +987,17 @@ public enum Health: String, SFFinderConvertable {
     case staroflife
     case staroflifeFill
 
-    public var systemName: String {
-        var finalName = ""
-        rawValue.forEach { char in
-            if char.isUppercase {
-                finalName += ".\(char.lowercased())"
-            } else if char.isNumber {
-                finalName += ".\(char)"
-            } else {
-                finalName += char.description
-            }
-        }
-        return finalName
+    var enumRawValue: String {
+        return rawValue
     }
+
 }
 
 // MARK: - Shapes
 
 /// Shape category representation
-public enum Shapes: String, SFFinderConvertable {
-    // iOS 13+
+public enum Shapes: String, SFFinderConvertable, SFSymbolsEnum {
+    // MARK: iOS 13+
 
     case rectangle
     case rectangleFill
@@ -1138,26 +1016,17 @@ public enum Shapes: String, SFFinderConvertable {
     case square
     case squareFill
 
-    public var systemName: String {
-        var finalName = ""
-        rawValue.forEach { char in
-            if char.isUppercase {
-                finalName += ".\(char.lowercased())"
-            } else if char.isNumber {
-                finalName += ".\(char)"
-            } else {
-                finalName += char.description
-            }
-        }
-        return finalName
+    var enumRawValue: String {
+        return rawValue
     }
+
 }
 
 // MARK: - Arrows
 
 /// SF Symbols for arrow representation
-public enum Arrows: String, SFFinderConvertable {
-    // iOS 13+
+public enum Arrows: String, SFFinderConvertable, SFSymbolsEnum {
+    // MARK: iOS 13+
 
     case arrowshapeTurnUpLeft
     case arrowshapeTurnUpLeftFill
@@ -1348,26 +1217,17 @@ public enum Arrows: String, SFFinderConvertable {
     case arrowtriangleRightSquare
     case arrowtriangleRightSquareFill
 
-    public var systemName: String {
-        var finalName = ""
-        rawValue.forEach { char in
-            if char.isUppercase {
-                finalName += ".\(char.lowercased())"
-            } else if char.isNumber {
-                finalName += ".\(char)"
-            } else {
-                finalName += char.description
-            }
-        }
-        return finalName
+    var enumRawValue: String {
+        return rawValue
     }
+
 }
 
 // MARK: - Indices
 
 /// SFSymbols for indices category symbols
-public enum Indices: String, SFFinderConvertable {
-    // iOS 13+
+public enum Indices: String, SFFinderConvertable, SFSymbolsEnum {
+    // MARK: iOS 13+
 
     case questionmarkCircle
     case questionmarkCircleFill
@@ -1445,34 +1305,19 @@ public enum Indices: String, SFFinderConvertable {
     }
 
     /// SFSymbols for retrieving currency symbols
-    public enum Currency: SFFinderConvertable {
-        // iOS 13+
+    public enum Currency: SFFinderConvertable, SFSymbolsHasValidator {
+        // MARK: iOS 13+
 
         case circle(currency: AvailableCurrency)
         case circleFill(currency: AvailableCurrency)
         case square(currency: AvailableCurrency)
         case squareFill(currency: AvailableCurrency)
-
-        public var systemName: String {
-            var finalName = ""
-            switch self {
-            case .circle(let currency):
-                finalName += "\(currency.rawValue)sign.circle"
-            case .circleFill(let currency):
-                finalName += "\(currency.rawValue)sign.circle.fill"
-            case .square(let currency):
-                finalName += "\(currency.rawValue)sign.square"
-            case .squareFill(let currency):
-                finalName += "\(currency.rawValue)sign.square.fill"
-            }
-            return finalName
-        }
     }
 
     /// SFSymbols for retrieving the number symbols
     /// Using Generic type in case want to put 01 or 02 as a String instead Int
-    public enum Number<Type>: SFFinderConvertable {
-        // iOS 13+
+    public enum Number<Type>: SFFinderConvertable, SFSymbolsHasValidator {
+        // MARK: iOS 13+
 
         case circle(number: Type)
         case circleFill(number: Type)
@@ -1482,76 +1327,29 @@ public enum Indices: String, SFFinderConvertable {
         case squareFill(number: Type)
         case altSquare(number: Type)
         case altSquareFill(number: Type)
-
-        public var systemName: String {
-            var finalName = ""
-            switch self {
-            case .circle(let number):
-                finalName += "\(number).circle"
-            case .circleFill(let number):
-                finalName += "\(number).circle.fill"
-            case .altCircle(let number):
-                finalName += "\(number).alt.circle"
-            case .altCircleFill(let number):
-                finalName += "\(number).alt.circle.fill"
-            case .square(let number):
-                finalName += "\(number).square"
-            case .squareFill(let number):
-                finalName += "\(number).square.fill"
-            case .altSquare(let number):
-                finalName += "\(number).alt.square"
-            case .altSquareFill(let number):
-                finalName += "\(number).alt.square.fill"
-            }
-            return finalName
-        }
     }
 
     /// SFSymbols for getting the alphabet symbols
-    public enum Alphabet: SFFinderConvertable {
-        // iOS 13+
+    public enum Alphabet: SFFinderConvertable, SFSymbolsHasValidator {
+        // MARK: iOS 13+
 
         case circle(character: Character)
         case circleFill(character: Character)
         case square(character: Character)
         case squareFill(character: Character)
-
-        public var systemName: String {
-            var finalName = ""
-            switch self {
-            case .circle(let character):
-                finalName += "\(character.rawValue).circle"
-            case .circleFill(let character):
-                finalName += "\(character.rawValue).circle.fill"
-            case .square(let character):
-                finalName += "\(character.rawValue).square"
-            case .squareFill(let character):
-                finalName += "\(character.rawValue).square.fill"
-            }
-            return finalName
-        }
     }
 
-    public var systemName: String {
-        var finalName = ""
-        rawValue.forEach { char in
-            if char.isUppercase {
-                finalName += ".\(char.lowercased())"
-            } else if char.isNumber {
-                finalName += ".\(char)"
-            } else {
-                finalName += char.description
-            }
-        }
-        return finalName
+    var enumRawValue: String {
+        return rawValue
     }
+
 }
 
 // MARK: - Math
 
 /// SFSymbol for mathematics operation
-public enum Math: String, SFFinderConvertable {
-    // iOS 13+
+public enum Math: String, SFFinderConvertable, SFSymbolsEnum {
+    // MARK: iOS 13+
 
     case sum
     case percent
@@ -1603,27 +1401,17 @@ public enum Math: String, SFFinderConvertable {
     case numberSquareFill
     case xSquareroot
 
-    public var systemName: String {
-        var finalName = ""
-        rawValue.forEach { char in
-            if char.isUppercase {
-                finalName += ".\(char.lowercased())"
-            } else if char.isNumber {
-                finalName += ".\(char)"
-            } else {
-                finalName += char.description
-            }
-        }
-        return finalName
+    var enumRawValue: String {
+        return rawValue
     }
+
 }
 
 // MARK: - Gaming
 
 /// SFSymbol for gaming icon
-public enum Gaming: String, SFFinderConvertable {
-    // iOS 14+
-
+public enum Gaming: String, SFFinderConvertable, SFSymbolsEnum {
+    // MARK: iOS 14+
     case circleGridCross
     case circleGridCrossFill
     case circleGridCrossLeftFill
@@ -1693,17 +1481,186 @@ public enum Gaming: String, SFFinderConvertable {
     case lineHorizontal3Circle
     case lineHorizontal3CircleFill
 
-    public var systemName: String {
-        var finalName = ""
-        rawValue.forEach { char in
-            if char.isUppercase {
-                finalName += ".\(char.lowercased())"
-            } else if char.isNumber {
-                finalName += ".\(char)"
-            } else {
-                finalName += char.description
-            }
-        }
-        return finalName
+    var enumRawValue: String {
+        return rawValue
+    }
+
+}
+
+// MARK: - Multicolor
+
+/// SFSymbol for multicolor icon
+public enum Multicolor: String, SFFinderConvertable, SFSymbolsEnum {
+
+    // MARK: iOS 14+
+
+    case squareGrid3x1FolderBadgePlus
+    case squareGrid3x1FolderFillBadgePlus
+    case paperplaneCircleFill
+    case externaldriveBadgePlus
+    case externaldriveFillBadgePlus
+    case externaldriveBadgeMinus
+    case externaldriveFillBadgeMinus
+    case externaldriveBadgeCheckmark
+    case externaldriveFillBadgeCheckmark
+    case externaldriveBadgeXmark
+    case externaldriveFillBadgeXmark
+    case docBadgePlus
+    case docFillBadgePlus
+    case noteTextBadgePlus
+    case arrowshapeTurnUpBackwardCircleFill
+    case arrowshapeTurnUpForwardCircleFill
+    case arrowshapeTurnUpLeft2CircleFill
+    case arrowshapeTurnUpBackward2CircleFill
+    case bookmarkCircleFill
+    case linkBadgePlus
+    case personFillBadgePlus
+    case personFillBadgeMinus
+    case personCropCircleBadgeExclamationmark
+    case personCropCircleFillBadgeExclamationmark
+    case thermometerSunFill
+    case filemenuAndSelection
+    case badgePlusRadiowavesForward
+    case circlebadgeFill
+    case teletypeCircleFill
+    case videoFillBadgePlus
+    case videoBadgeCheckmark
+    case videoFillBadgeCheckmark
+    case carCircleFill
+    case crossCircleFill
+    case leafFill
+    case rectangleBadgePlus
+    case rectangleFillBadgePlus
+    case rectangleBadgeMinus
+    case rectangleFillBadgeMinus
+    case macwindowBadgePlus
+    case earBadgeCheckmark
+    case giftCircleFill
+    case airplaneCircleFill
+    case hourglassBadgePlus
+    case atCircleFill
+    case arrowTriangleTurnUpRightCircleFill
+
+    // MARK: iOS 13+
+    case pencilTipCropCircleBadgePlus
+    case pencilTipCropCircleBadgeMinus
+    case trashCircleFill
+    case folderCircleFill
+    case folderBadgePlus
+    case folderFillBadgePlus
+    case folderBadgeMinus
+    case folderFillBadgeMinus
+    case calendarCircleFill
+    case calendarBadgePlus
+    case calendarBadgeMinus
+    case arrowshapeTurnUpLeftCircleFill
+    case arrowshapeTurnUpRightCircleFill
+    case bookmarkFill
+    case paperclip
+    case linkCircleFill
+    case personBadgePlus
+    case personBadgeMinus
+    case personCropCircleBadgePlus
+    case personCropCircleFillBadgePlus
+    case personCropCircleBadgeMinus
+    case personCropCircleFillBadgeMinus
+    case personCropCircleBadgeCheckmark
+    case personCropCircleFillBadgeCheckmark
+    case personCropCircleBadgeXmark
+    case personCropCircleFillBadgeXmark
+    case sunMaxFill
+    case sunriseFill
+    case sunsetFill
+    case sunDustFill
+    case sunHazeFill
+    case moonFill
+    case moonCircleFill
+    case sparkles
+    case moonStarsFill
+    case cloudFill
+    case cloudDrizzleFill
+    case cloudRainFill
+    case cloudHeavyrainFill
+    case cloudFogFill
+    case cloudHailFill
+    case cloudSnowFill
+    case cloudSleetFill
+    case cloudBoltFill
+    case cloudBoltRainFill
+    case cloudSunFill
+    case cloudSunRainFill
+    case cloudSunBoltFill
+    case cloudMoonFill
+    case cloudMoonRainFill
+    case cloudMoonBoltFill
+    case smokeFill
+    case wind
+    case windSnow
+    case snow
+    case tornado
+    case tropicalstorm
+    case hurricane
+    case thermometerSnowflake
+    case thermometer
+    case exclamationmarkTriangleFill
+    case dropTriangleFill
+    case memoriesBadgePlus
+    case memoriesBadgeMinus
+    case badgePlusRadiowavesRight
+    case starFill
+    case starCircleFill
+    case flagFill
+    case flagCircleFill
+    case locationCircleFill
+    case bellCircleFill
+    case messageCircleFill
+    case phoneCircleFill
+    case phoneBadgePlus
+    case phoneFillBadgePlus
+    case phoneDownCircleFill
+    case videoCircleFill
+    case videoBadgePlus
+    case envelopeCircleFill
+    case bagBadgePlus
+    case bagFillBadgePlus
+    case bagBadgeMinus
+    case bagFillBadgeMinus
+    case cartBadgePlus
+    case cartFillBadgePlus
+    case cartBadgeMinus
+    case cartFillBadgeMinus
+    case gaugeBadgePlus
+    case gaugeBadgeMinus
+    case wifi
+    case pinCircleFill
+    case mappinCircleFill
+    case rectangleBadgeCheckmark
+    case rectangleFillBadgeCheckmark
+    case rectangleBadgeXmark
+    case rectangleFillBadgeXmark
+    case rectangleStackBadgePlus
+    case rectangleStackFillBadgePlus
+    case rectangleStackBadgeMinus
+    case rectangleStackFillBadgeMinus
+    case alarm
+    case timer
+    case waveformPathBadgePlus
+    case waveformPathBadgeMinus
+    case gift
+    case giftFill
+    case textBadgePlus
+    case textBadgeMinus
+    case textBadgeCheckmark
+    case textBadgeXmark
+    case infoCircleFill
+    case atBadgePlus
+    case atBadgeMinus
+    case plusCircleFill
+    case minusCircleFill
+    case xmarkOctagonFill
+    case checkmarkCircleFill
+
+    var enumRawValue: String {
+        return rawValue
     }
 }
