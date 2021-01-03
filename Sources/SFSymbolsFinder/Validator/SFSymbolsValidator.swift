@@ -87,6 +87,12 @@ final class SFSymbolsValidator: SFSymbolsValidation {
         case let type as SFSymbolsEnum:
             if let objectType = type as? ObjectAndTools, objectType == .oneMagnifyingglass {
                 return "1.magnifyingglass"
+            } else if let objectType = type as? All, (objectType == .fourkTv || objectType == .fourkTvFill) {
+                if objectType == .fourkTv {
+                    return "4.k.tv"
+                } else {
+                    return "4.k.tv.fill"
+                }
             } else {
                 var finalName = ""
                 var previousChar: Character = Character("-")

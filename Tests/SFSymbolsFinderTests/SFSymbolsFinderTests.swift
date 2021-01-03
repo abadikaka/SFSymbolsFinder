@@ -57,6 +57,11 @@ final class SFSymbolsFinderTests: XCTestCase {
         XCTAssertEqual(General.squareGrid3x2.systemName, "square.grid.3x2")
     }
 
+    func testAllConversion() {
+        XCTAssertEqual(All.fourkTv.systemName, "4.k.tv")
+        XCTAssertEqual(All.fourkTvFill.systemName, "4.k.tv.fill")
+    }
+
     static var allTests = [
         ("testSystemNameConversion", testSystemNameConversion),
         ("testSystemNameNumberConversion", testSystemNameNumberConversion),
@@ -65,6 +70,7 @@ final class SFSymbolsFinderTests: XCTestCase {
         ("testSystemNameIndicesNumberConversion", testSystemNameIndicesNumberConversion),
         ("testGamingConversion", testGamingConversion),
         ("testSystemNameArrowConversion",testSystemNameArrowConversion),
-        ("testGeneralConversion", testGeneralConversion)
+        ("testGeneralConversion", testGeneralConversion),
+        ("testAllConversion", testAllConversion)
     ]
 }
