@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://img.shields.io/badge/swift-5.2-orange.svg" />
+    <img src="https://img.shields.io/badge/swift-5.1-orange.svg" />
     <a href="https://swift.org/package-manager">
         <img src="https://img.shields.io/badge/swiftpm-compatible-brightgreen.svg?style=flat" alt="Swift Package Manager" />
     </a>
@@ -38,6 +38,7 @@ SFSymbolsFinder is a convenient library to get whole list of available latest SF
 - `Indices`
 - `Math`
 - `Gaming`
+- `Multicolor`
 
 All categories is based on official Apple SF Symbols application [sfsymbols](https://developer.apple.com/sf-symbols/)
 
@@ -59,12 +60,12 @@ struct ContentView: View {
         // Approach 1 by using Image directly
         VLayout {
             Communication.micSlashFill.image
-                                .resizable
+                                .resizable()
         }
         // Approach 2 by using the system name string
         VLayout {
             Image(systemName: Communication.micSlashFill.systemName)
-                                .resizable
+                                .resizable()
         }
     }
   }
@@ -121,8 +122,8 @@ If you'd like to open an issue, please submit new issue.
 
 ## Todo
 
-- [ ] Add generic validation for system name
-- [ ] Add more iOS 14 symbols
-- [ ] Add more iOS 13 symbols that not included in any Categories
+- [x] Add generic validation for system name
+- [x] Add more iOS 14 symbols
+- [x] Add more iOS 13 symbols that not included in any Categories
 
 Thank you and please enjoy using **SFSymbolsFinder**!
