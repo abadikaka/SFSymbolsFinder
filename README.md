@@ -15,7 +15,7 @@ SFSymbolsFinder is a convenient library to get whole list of available latest SF
 
 ## Introduction
  
- SFSymbolsFinder introduces 21 SF Symbols categories, each category represented by an `enum`: 
+ SFSymbolsFinder introduces 22 SF Symbols categories, each category represented by an `enum`: 
 
 - `General`
 - `Communication`
@@ -39,10 +39,11 @@ SFSymbolsFinder is a convenient library to get whole list of available latest SF
 - `Math`
 - `Gaming`
 - `Multicolor`
+- `All`
 
 All categories is based on official Apple SF Symbols application [sfsymbols](https://developer.apple.com/sf-symbols/)
 
-***FYI: Most of the symbols is coming from SF Symbols v 1.1 for now. Soon will adding more to support v 2.1. Contribution welcome !***
+***All icons has been updated, now all icons are supported. Please refer to All Categories to get all icon. Contribution welcome !***
 
 ## Usage
 
@@ -103,6 +104,17 @@ Indices.Alphabet.circle(character: .a).systemName // return a.circle
 ```swift
 Indices.Currency.circle(currency: .dollar).systemName // return dollarsign.circle
 ```
+### All
+
+All icons are useful in case you don't want to use a category based. Just copy the name from SF Symbols App then use enum style code. 
+
+```swift
+// In sf symbols : xmark.circle
+// In code like below
+All.xmarkCircle.systemName
+```
+
+> NOTE: For number still need to use Indices.Number
 
 ## Installation
 
