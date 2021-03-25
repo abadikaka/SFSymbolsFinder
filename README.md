@@ -68,6 +68,13 @@ struct ContentView: View {
             Image(systemName: Communication.micSlashFill.systemName)
                                 .resizable()
         }
+        // Approach 3 by using enum directly
+        VLayout {
+            All.micSlashFill // this one is recognized as an Image already
+            // If you want to resize you need to access the body
+            All.micSlashFill.body
+                            .resizable()
+        }
     }
   }
 }
