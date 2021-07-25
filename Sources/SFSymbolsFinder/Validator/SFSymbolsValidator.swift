@@ -61,6 +61,10 @@ final class SFSymbolsValidator: SFSymbolsValidation {
                 finalName += "\(number).alt.square"
             case .altSquareFill(let number):
                 finalName += "\(number).alt.square.fill"
+            case .rectangleFill(let number):
+                finalName += "\(number).rectangle.fill"
+            case .rectangle(let number):
+                finalName += "\(number).rectangle"
             }
             return finalName
         case let type as Indices.Number<String>:
@@ -82,6 +86,10 @@ final class SFSymbolsValidator: SFSymbolsValidation {
                 finalName += "\(number).alt.square"
             case .altSquareFill(let number):
                 finalName += "\(number).alt.square.fill"
+            case .rectangleFill(let number):
+                finalName += "\(number).rectangle.fill"
+            case .rectangle(let number):
+                finalName += "\(number).rectangle"
             }
             return finalName
         case let type as SFSymbolsEnum:
