@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import SwiftUI
 @testable import SFSymbolsFinder
 
 final class SFSymbolsFinderTests: XCTestCase {
@@ -60,6 +61,10 @@ final class SFSymbolsFinderTests: XCTestCase {
     func testAllConversion() {
         XCTAssertEqual(All.fourkTv.systemName, "4.k.tv")
         XCTAssertEqual(All.fourkTvFill.systemName, "4.k.tv.fill")
+    }
+    
+    func testBodyViewImage() {
+        XCTAssertTrue(All.fourkTv.body is Image)
     }
 
     static var allTests = [

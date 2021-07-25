@@ -48,7 +48,7 @@ extension SFSymbolsHasValidator {
 // MARK: - General
 
 /// General category for sf symbols, not included in any category
-public enum General: String, SFFinderConvertable, SFSymbolsEnum {
+public enum General: String, SFFinderConvertable, SFSymbolsEnum, View {
     // MARK: iOS 13+
 
     case lineHorizontal3
@@ -98,13 +98,17 @@ public enum General: String, SFFinderConvertable, SFSymbolsEnum {
     var enumRawValue: String {
         return rawValue
     }
+    
+    public var body: some View {
+        image
+    }
 
 }
 
 // MARK: - Communication
 
 /// Communication category for sf symbols
-public enum Communication: String, SFFinderConvertable, SFSymbolsEnum {
+public enum Communication: String, SFFinderConvertable, SFSymbolsEnum, View {
     // MARK: iOS 13+
 
     case mic
@@ -197,13 +201,17 @@ public enum Communication: String, SFFinderConvertable, SFSymbolsEnum {
     var enumRawValue: String {
         return rawValue
     }
+    
+    public var body: some View {
+        image
+    }
 
 }
 
 // MARK: - Weather
 
 /// Weather category for sf symbols
-public enum Weather: String, SFFinderConvertable, SFSymbolsEnum {
+public enum Weather: String, SFFinderConvertable, SFSymbolsEnum, View {
     // MARK: iOS 13+
 
     case sunMin
@@ -278,13 +286,16 @@ public enum Weather: String, SFFinderConvertable, SFSymbolsEnum {
     var enumRawValue: String {
         return rawValue
     }
-
+    
+    public var body: some View {
+        image
+    }
 }
 
 // MARK: - ObjectAndTools
 
 /// Object and tools category sf symbols
-public enum ObjectAndTools: String, SFFinderConvertable, SFSymbolsEnum {
+public enum ObjectAndTools: String, SFFinderConvertable, SFSymbolsEnum, View {
     // MARK: iOS 13+
 
     case pencil
@@ -526,13 +537,16 @@ public enum ObjectAndTools: String, SFFinderConvertable, SFSymbolsEnum {
     var enumRawValue: String {
         return rawValue
     }
-
+    
+    public var body: some View {
+        image
+    }
 }
 
 // MARK: - Devices
 
 /// Devices category for sf symbols
-public enum Devices: String, SFFinderConvertable, SFSymbolsEnum {
+public enum Devices: String, SFFinderConvertable, SFSymbolsEnum, View {
     // MARK: iOS 13+
 
     case keyboard
@@ -555,13 +569,16 @@ public enum Devices: String, SFFinderConvertable, SFSymbolsEnum {
     var enumRawValue: String {
         return rawValue
     }
-
+    
+    public var body: some View {
+        image
+    }
 }
 
 // MARK: - Connectivity
 
 /// Connectivity category for sf symbols
-public enum Connectivity: String, SFFinderConvertable, SFSymbolsEnum {
+public enum Connectivity: String, SFFinderConvertable, SFSymbolsEnum, View {
     // MARK: iOS 13+
 
     case wifi
@@ -576,13 +593,16 @@ public enum Connectivity: String, SFFinderConvertable, SFSymbolsEnum {
     var enumRawValue: String {
         return rawValue
     }
-
+    
+    public var body: some View {
+        image
+    }
 }
 
 // MARK: - Transportation
 
 /// Transportation category for sf symbols
-public enum Transportation: String, SFFinderConvertable, SFSymbolsEnum {
+public enum Transportation: String, SFFinderConvertable, SFSymbolsEnum, View {
     // MARK: iOS 13+
 
     case car
@@ -593,13 +613,16 @@ public enum Transportation: String, SFFinderConvertable, SFSymbolsEnum {
     var enumRawValue: String {
         return rawValue
     }
-
+    
+    public var body: some View {
+        image
+    }
 }
 
 // MARK: - Human
 
 /// Human category for sf symbol
-public enum Human: String, SFFinderConvertable, SFSymbolsEnum {
+public enum Human: String, SFFinderConvertable, SFSymbolsEnum, View {
     // MARK: iOS 13+
 
     case person
@@ -655,13 +678,16 @@ public enum Human: String, SFFinderConvertable, SFSymbolsEnum {
     var enumRawValue: String {
         return rawValue
     }
-
+    
+    public var body: some View {
+        image
+    }
 }
 
 // MARK: - Nature
 
 /// Nature category for sf symbols
-public enum Nature: String, SFFinderConvertable, SFSymbolsEnum {
+public enum Nature: String, SFFinderConvertable, SFSymbolsEnum, View {
     // MARK: iOS 13+
 
     case flame
@@ -685,13 +711,16 @@ public enum Nature: String, SFFinderConvertable, SFSymbolsEnum {
     var enumRawValue: String {
         return rawValue
     }
-
+    
+    public var body: some View {
+        image
+    }
 }
 
 // MARK: - Editing
 
 /// Editing category for editing sf symbols
-public enum Editing: String, SFFinderConvertable, SFSymbolsEnum {
+public enum Editing: String, SFFinderConvertable, SFSymbolsEnum, View {
     // MARK: iOS 13+
 
     case pencil
@@ -745,13 +774,16 @@ public enum Editing: String, SFFinderConvertable, SFSymbolsEnum {
     var enumRawValue: String {
         return rawValue
     }
-
+    
+    public var body: some View {
+        image
+    }
 }
 
 // MARK: - TextFormatting
 
 /// Text formatting category for sf symbols
-public enum TextFormatting: String, SFFinderConvertable, SFSymbolsEnum {
+public enum TextFormatting: String, SFFinderConvertable, SFSymbolsEnum, View {
     // MARK: iOS 13+
 
     case paragraph
@@ -790,13 +822,16 @@ public enum TextFormatting: String, SFFinderConvertable, SFSymbolsEnum {
     var enumRawValue: String {
         return rawValue
     }
-
+    
+    public var body: some View {
+        image
+    }
 }
 
 // MARK: - Media
 
 /// Media category for sf symbols
-public enum Media: String, SFFinderConvertable, SFSymbolsEnum {
+public enum Media: String, SFFinderConvertable, SFSymbolsEnum, View {
     // MARK: iOS 13+
 
     case play
@@ -882,13 +917,16 @@ public enum Media: String, SFFinderConvertable, SFSymbolsEnum {
     var enumRawValue: String {
         return rawValue
     }
-
+    
+    public var body: some View {
+        image
+    }
 }
 
 // MARK: - Keyboard
 
 /// Keyboard category for sf symbols
-public enum Keyboard: String, SFFinderConvertable, SFSymbolsEnum {
+public enum Keyboard: String, SFFinderConvertable, SFSymbolsEnum, View {
     // MARK: iOS 13+
 
     case command
@@ -923,13 +961,16 @@ public enum Keyboard: String, SFFinderConvertable, SFSymbolsEnum {
     var enumRawValue: String {
         return rawValue
     }
-
+    
+    public var body: some View {
+        image
+    }
 }
 
 // MARK: - Commerce
 
 /// Commerce category for sf symbols
-public enum Commerce: String, SFFinderConvertable, SFSymbolsEnum {
+public enum Commerce: String, SFFinderConvertable, SFSymbolsEnum, View {
     // MARK: iOS 13+
 
     case signature
@@ -951,13 +992,16 @@ public enum Commerce: String, SFFinderConvertable, SFSymbolsEnum {
     var enumRawValue: String {
         return rawValue
     }
-
+    
+    public var body: some View {
+        image
+    }
 }
 
 // MARK: - Time
 
 /// Time category for finding sf symbols
-public enum Time: String, SFFinderConvertable {
+public enum Time: String, SFFinderConvertable, View {
     // MARK: iOS 13+
 
     case clock
@@ -971,13 +1015,16 @@ public enum Time: String, SFFinderConvertable {
     var enumRawValue: String {
         return rawValue
     }
-
+    
+    public var body: some View {
+        image
+    }
 }
 
 // MARK: - Health
 
 /// Health category representation
-public enum Health: String, SFFinderConvertable {
+public enum Health: String, SFFinderConvertable, View {
     // MARK: iOS 13+
 
     case heart
@@ -995,13 +1042,16 @@ public enum Health: String, SFFinderConvertable {
     var enumRawValue: String {
         return rawValue
     }
-
+    
+    public var body: some View {
+        image
+    }
 }
 
 // MARK: - Shapes
 
 /// Shape category representation
-public enum Shapes: String, SFFinderConvertable, SFSymbolsEnum {
+public enum Shapes: String, SFFinderConvertable, SFSymbolsEnum, View {
     // MARK: iOS 13+
 
     case rectangle
@@ -1024,13 +1074,16 @@ public enum Shapes: String, SFFinderConvertable, SFSymbolsEnum {
     var enumRawValue: String {
         return rawValue
     }
-
+    
+    public var body: some View {
+        image
+    }
 }
 
 // MARK: - Arrows
 
 /// SF Symbols for arrow representation
-public enum Arrows: String, SFFinderConvertable, SFSymbolsEnum {
+public enum Arrows: String, SFFinderConvertable, SFSymbolsEnum, View {
     // MARK: iOS 13+
 
     case arrowshapeTurnUpLeft
@@ -1225,13 +1278,16 @@ public enum Arrows: String, SFFinderConvertable, SFSymbolsEnum {
     var enumRawValue: String {
         return rawValue
     }
-
+    
+    public var body: some View {
+        image
+    }
 }
 
 // MARK: - Indices
 
 /// SFSymbols for indices category symbols
-public enum Indices: String, SFFinderConvertable, SFSymbolsEnum {
+public enum Indices: String, SFFinderConvertable, SFSymbolsEnum, View  {
     // MARK: iOS 13+
 
     case questionmarkCircle
@@ -1310,18 +1366,22 @@ public enum Indices: String, SFFinderConvertable, SFSymbolsEnum {
     }
 
     /// SFSymbols for retrieving currency symbols
-    public enum Currency: SFFinderConvertable, SFSymbolsHasValidator {
+    public enum Currency: SFFinderConvertable, SFSymbolsHasValidator, View {
         // MARK: iOS 13+
 
         case circle(currency: AvailableCurrency)
         case circleFill(currency: AvailableCurrency)
         case square(currency: AvailableCurrency)
         case squareFill(currency: AvailableCurrency)
+        
+        public var body: some View {
+            image
+        }
     }
 
     /// SFSymbols for retrieving the number symbols
     /// Using Generic type in case want to put 01 or 02 as a String instead Int
-    public enum Number<Type>: SFFinderConvertable, SFSymbolsHasValidator {
+    public enum Number<Type>: SFFinderConvertable, SFSymbolsHasValidator, View {
         // MARK: iOS 13+
 
         case circle(number: Type)
@@ -1334,20 +1394,32 @@ public enum Indices: String, SFFinderConvertable, SFSymbolsEnum {
         case squareFill(number: Type)
         case altSquare(number: Type)
         case altSquareFill(number: Type)
+        
+        public var body: some View {
+            image
+        }
     }
 
     /// SFSymbols for getting the alphabet symbols
-    public enum Alphabet: SFFinderConvertable, SFSymbolsHasValidator {
+    public enum Alphabet: SFFinderConvertable, SFSymbolsHasValidator, View {
         // MARK: iOS 13+
 
         case circle(character: Character)
         case circleFill(character: Character)
         case square(character: Character)
         case squareFill(character: Character)
+        
+        public var body: some View {
+            image
+        }
     }
 
     var enumRawValue: String {
         return rawValue
+    }
+    
+    public var body: some View {
+        image
     }
 
 }
@@ -1355,7 +1427,7 @@ public enum Indices: String, SFFinderConvertable, SFSymbolsEnum {
 // MARK: - Math
 
 /// SFSymbol for mathematics operation
-public enum Math: String, SFFinderConvertable, SFSymbolsEnum {
+public enum Math: String, SFFinderConvertable, SFSymbolsEnum, View  {
     // MARK: iOS 13+
 
     case sum
@@ -1411,13 +1483,16 @@ public enum Math: String, SFFinderConvertable, SFSymbolsEnum {
     var enumRawValue: String {
         return rawValue
     }
-
+    
+    public var body: some View {
+        image
+    }
 }
 
 // MARK: - Gaming
 
 /// SFSymbol for gaming icon
-public enum Gaming: String, SFFinderConvertable, SFSymbolsEnum {
+public enum Gaming: String, SFFinderConvertable, SFSymbolsEnum, View {
     // MARK: iOS 14+
     case circleGridCross
     case circleGridCrossFill
@@ -1491,13 +1566,16 @@ public enum Gaming: String, SFFinderConvertable, SFSymbolsEnum {
     var enumRawValue: String {
         return rawValue
     }
-
+    
+    public var body: some View {
+        image
+    }
 }
 
 // MARK: - Multicolor
 
 /// SFSymbol for multicolor icon
-public enum Multicolor: String, SFFinderConvertable, SFSymbolsEnum {
+public enum Multicolor: String, SFFinderConvertable, SFSymbolsEnum, View {
 
     // MARK: iOS 14+
 
@@ -1670,12 +1748,16 @@ public enum Multicolor: String, SFFinderConvertable, SFSymbolsEnum {
     var enumRawValue: String {
         return rawValue
     }
+    
+    public var body: some View {
+        image
+    }
 }
 
 // MARK: - All
 
 /// All category for sf symbols, not included in any category, exclude the number need to use Indices
-public enum All: String, SFFinderConvertable, SFSymbolsEnum {
+public enum All: String, SFFinderConvertable, SFSymbolsEnum, View {
     case squareAndArrowUpTrianglebadgeExclamationmark
     case rectanglePortraitAndArrowRight
     case rectanglePortraitAndArrowRightFill
@@ -4676,5 +4758,9 @@ public enum All: String, SFFinderConvertable, SFSymbolsEnum {
 
     var enumRawValue: String {
         return rawValue
+    }
+    
+    public var body: some View {
+        image
     }
 }
