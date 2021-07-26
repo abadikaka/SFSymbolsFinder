@@ -5,6 +5,7 @@
 //  Created by Santoso, Michael Abadi on 30/12/2563 BE.
 //
 
+import UIKit
 import SwiftUI
 
 // MARK: - SFFinderConvertable
@@ -20,6 +21,11 @@ public protocol SFFinderConvertable {
 public extension SFFinderConvertable {
     var image: Image {
         return Image(systemName: systemName)
+    }
+
+    /// add UIKit functionality
+    var uiImage: UIImage {
+        return UIImage(systemName: systemName)!
     }
 
     var systemName: String {
