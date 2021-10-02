@@ -16,6 +16,7 @@ import SwiftUI
 public protocol SFFinderConvertable {
     var image: Image { get }
     var systemName: String { get }
+    var uiImage: UIImage? { get }
 }
 
 public extension SFFinderConvertable {
@@ -23,9 +24,8 @@ public extension SFFinderConvertable {
         return Image(systemName: systemName)
     }
 
-    /// add UIKit functionality
-    var uiImage: UIImage {
-        return UIImage(systemName: systemName)!
+    var uiImage: UIImage? {
+        return UIImage(systemName: systemName)
     }
 
     var systemName: String {

@@ -67,6 +67,11 @@ final class SFSymbolsFinderTests: XCTestCase {
         XCTAssertTrue(All.fourkTv.body is Image)
     }
 
+    func testUiImage() {
+        XCTAssertTrue(All.fourkTv.uiImage == nil)
+        XCTAssertTrue(All.person.uiImage != nil)
+    }
+
     static var allTests = [
         ("testSystemNameConversion", testSystemNameConversion),
         ("testSystemNameNumberConversion", testSystemNameNumberConversion),
