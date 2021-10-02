@@ -80,6 +80,12 @@ struct ContentView: View {
 }
 ```
 
+To get the uiImage version you can use below code
+
+```
+All.micSlashFill.uiImage
+```
+
 There are some categories that need special way to retrieve the symbols: 
 
 ### ObjectAndTools
