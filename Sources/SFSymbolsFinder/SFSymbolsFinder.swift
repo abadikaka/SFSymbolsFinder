@@ -37,6 +37,13 @@ public extension SFFinderConvertable {
     }
 }
 
+public extension Image {
+
+    init(systemName: All) {
+        self.init(systemName: systemName.enumRawValue)
+    }
+}
+
 protocol SFSymbolsEnum: SFSymbolsHasValidator {
     var enumRawValue: String { get }
 }
