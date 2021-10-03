@@ -47,6 +47,16 @@ All categories is based on official Apple SF Symbols application [sfsymbols](htt
 
 ## Usage
 
+### New Update!
+
+Now you can use smart init directly!
+
+```swift
+Image(systemName: .person)
+
+UIImage(systemName: .person)
+```
+
 ### General Usage
 
 Use it easily with calling the enum for each category
