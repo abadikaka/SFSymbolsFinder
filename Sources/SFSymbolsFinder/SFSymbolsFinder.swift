@@ -39,15 +39,24 @@ public extension SFFinderConvertable {
 
 public extension Image {
 
+    init(systemName: SFFinderConvertable) {
+        self.init(systemName: systemName.systemName)
+    }
+
     init(systemName: All) {
-        self.init(systemName: systemName.enumRawValue)
+        self.init(systemName: systemName.validator.validateSystemName(for: systemName))
     }
 }
 
 public extension UIImage {
 
+
+    convenience init?(systemName: SFFinderConvertable) {
+        self.init(systemName: systemName.systemName)
+    }
+
     convenience init?(systemName: All) {
-        self.init(systemName: systemName.enumRawValue)
+        self.init(systemName: systemName.validator.validateSystemName(for: systemName))
     }
 }
 
