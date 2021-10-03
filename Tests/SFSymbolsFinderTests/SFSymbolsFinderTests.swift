@@ -7,6 +7,7 @@
 
 import XCTest
 import SwiftUI
+import UIKit
 @testable import SFSymbolsFinder
 
 final class SFSymbolsFinderTests: XCTestCase {
@@ -67,8 +68,11 @@ final class SFSymbolsFinderTests: XCTestCase {
         XCTAssertTrue(All.fourkTv.body is Image)
     }
 
-    func testUiImage() {
+    func testUiImageNil() {
         XCTAssertTrue(All.fourkTv.uiImage == nil)
+    }
+
+    func testUIImage() {
         XCTAssertTrue(All.person.uiImage != nil)
     }
 
