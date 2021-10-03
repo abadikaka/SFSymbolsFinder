@@ -44,6 +44,13 @@ public extension Image {
     }
 }
 
+public extension UIImage {
+
+    convenience init?(systemName: All) {
+        self.init(systemName: systemName.enumRawValue)
+    }
+}
+
 protocol SFSymbolsEnum: SFSymbolsHasValidator {
     var enumRawValue: String { get }
 }
