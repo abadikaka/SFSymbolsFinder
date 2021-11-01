@@ -1,11 +1,3 @@
-//
-//  SFSymbolsFinder.swift
-//
-//
-//  Created by Santoso, Michael Abadi on 30/12/2563 BE.
-//
-
-import UIKit
 import SwiftUI
 
 // MARK: - SFFinderConvertable
@@ -16,16 +8,11 @@ import SwiftUI
 public protocol SFFinderConvertable {
     var image: Image { get }
     var systemName: String { get }
-    var uiImage: UIImage? { get }
 }
 
 public extension SFFinderConvertable {
     var image: Image {
         return Image(systemName: systemName)
-    }
-
-    var uiImage: UIImage? {
-        return UIImage(systemName: systemName)
     }
 
     var systemName: String {
@@ -38,7 +25,6 @@ public extension SFFinderConvertable {
 }
 
 public extension Image {
-
     init(systemName: SFFinderConvertable) {
         self.init(systemName: systemName.systemName)
     }
@@ -48,9 +34,16 @@ public extension Image {
     }
 }
 
+#if canImport(UIKit)
+import UIKit
+
+public extension SFFinderConvertable {
+    var uiImage: UIImage? {
+        return UIImage(systemName: systemName)
+    }
+}
+
 public extension UIImage {
-
-
     convenience init?(systemName: SFFinderConvertable) {
         self.init(systemName: systemName.systemName)
     }
@@ -59,6 +52,7 @@ public extension UIImage {
         self.init(systemName: systemName.validator.validateSystemName(for: systemName))
     }
 }
+#endif
 
 protocol SFSymbolsEnum: SFSymbolsHasValidator {
     var enumRawValue: String { get }

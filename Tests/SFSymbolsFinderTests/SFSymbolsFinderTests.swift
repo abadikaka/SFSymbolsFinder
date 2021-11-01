@@ -1,17 +1,8 @@
-//
-//  SFSymbolsFinderTests.swift
-//
-//
-//  Created by Santoso, Michael Abadi on 30/12/2563 BE.
-//
-
 import XCTest
 import SwiftUI
-import UIKit
-@testable import SFSymbolsFinder
+import SFSymbolsFinder
 
 final class SFSymbolsFinderTests: XCTestCase {
-
     func testSystemNameConversion() {
         XCTAssertEqual(Communication.micSlashFill.systemName, "mic.slash.fill")
     }
@@ -68,14 +59,6 @@ final class SFSymbolsFinderTests: XCTestCase {
         XCTAssertTrue(All.fourkTv.body is Image)
     }
 
-    func testUiImageNil() {
-        XCTAssertTrue(All.fourkTv.uiImage == nil)
-    }
-
-    func testUIImage() {
-        XCTAssertTrue(All.person.uiImage != nil)
-    }
-
     static var allTests = [
         ("testSystemNameConversion", testSystemNameConversion),
         ("testSystemNameNumberConversion", testSystemNameNumberConversion),
@@ -88,3 +71,17 @@ final class SFSymbolsFinderTests: XCTestCase {
         ("testAllConversion", testAllConversion)
     ]
 }
+
+#if canImport(UIKit)
+import UIKit
+
+extension SFSymbolsFinderTests {
+    func testUiImageNil() {
+        XCTAssertTrue(All.fourkTv.uiImage == nil)
+    }
+
+    func testUIImage() {
+        XCTAssertTrue(All.person.uiImage != nil)
+    }
+}
+#endif
